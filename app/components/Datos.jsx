@@ -1,12 +1,12 @@
 
 //import { GetStaticProps } from 'next'
-import { getData } from '../hooks/fetchData'
+import { getStaticProps } from '../hooks/fetchData'
 
 const Datos = async () => {
 
     const coleccion = 'productos'
 
-    const data = (await getData({ coleccion })).props.posts
+    const data = (await getStaticProps({ coleccion })).props.posts
     
     //console.log(data)
 

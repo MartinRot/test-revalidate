@@ -1,7 +1,7 @@
 import db from "../firebase/firebaseConfig";
 import { getDocs, query, collection } from "firebase/firestore";
 
-export async function getData({ coleccion }) {
+export async function getStaticProps({ coleccion }) {
   let q = "";
 
   q = query(collection(db, coleccion));
@@ -14,8 +14,6 @@ export async function getData({ coleccion }) {
     props: {
       posts,
     },
-    next: {
       revalidate: 30,
-    },
   };
 }
